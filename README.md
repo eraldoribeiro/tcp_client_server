@@ -40,3 +40,4 @@ Open four terminals and in each one run:
 ./client 4 400
 ```
 
+![sample_run](sample_run.jpg)
