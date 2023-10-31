@@ -4,7 +4,7 @@ Starter code example for tcp (socket) client-server system
 #### Compilation instructions
 
 ```shell
-csgcc utils.c tcp_server.c -o server
+gcc utils.c tcp_server.c -o server
 gcc -o client tcp_client.c utils.c
 ```
 
