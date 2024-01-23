@@ -22,7 +22,7 @@ Open four terminals and in each one run:
 ./client <external index> <initial temperature>
 ```
 
-##### Example: 
+##### Example:      
 
 ```shell
 ./client 1 100
