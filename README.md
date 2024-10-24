@@ -7,7 +7,7 @@
        gcc -o client tcp_client.c utils.c
     2. ./server
 5. Open four other terminals and in each one run:
-    1. ./client <external index> <initial temperature>
+    1. "./client <external index> <initial temperature>"
     2. _example_- ./client 1 100, ./client 2 200 ...
 6. Incoming connections from each of the sockets created will stabalize at the same temperature, and
    once stabalized, the program will end
