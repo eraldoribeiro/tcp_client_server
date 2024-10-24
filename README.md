@@ -15,6 +15,7 @@
    
 **Changes made to acomplish assignment:**
 Files modified: tcp_server.c and tcp_client.c
+
 tcp_client changes:
 - added a loop, that will continuously send and recieve temeratures  untill the process temps are stable, recalculating the external temp
   based on the recieved central temp untill stable.
