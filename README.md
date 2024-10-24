@@ -1,5 +1,4 @@
 **How to run the code:**
-
 1. Open a ternimal window
 2. Exec the docker container - docker exec -it "directory_name" bash
 3. Go into the tcp_ser_client directory
@@ -12,10 +11,10 @@
     2. _example_- ./client 1 100, ./client 2 200 ...
 6. Incoming connections from each of the sockets created will stabalize at the same temperature, and
    once stabalized, the program will end
+
    
 **Changes made to acomplish assignment:**
 Files modified: tcp_server.c and tcp_client.c
-
 tcp_client changes:
 - added a loop, that will continuously send and recieve temeratures  untill the process temps are stable, recalculating the external temp
   based on the recieved central temp untill stable.
@@ -25,6 +24,7 @@ tcp_server changes
 - added new calculation of temperature logic.
 - loop that recalculates central temperature untill stable.
 - added stabalization check; checks based on the temp threshhold, terminating once stable.
+
 
 **Output - 3 views** just to see the whole code. It did not all fit on screen:
 
