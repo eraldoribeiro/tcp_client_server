@@ -1,7 +1,7 @@
 **How to run the code:**
 
-2. Open a ternimal window
-1. Exec the docker container - docker exec -it "directory_name" bash
+1. Open a ternimal window
+2. Exec the docker container - docker exec -it "directory_name" bash
 3. Go into the tcp_ser_client directory
 4. Execute the following commands:
     1. gcc utils.c tcp_server.c -o server
