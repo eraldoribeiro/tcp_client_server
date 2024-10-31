@@ -1,43 +1,34 @@
-# tcp_client_server
-Starter code example for tcp (socket) client-server system
+**How to run the code:**
+1. Open a ternimal window
+2. Exec the docker container - docker exec -it "directory_name" bash
+3. Go into the tcp_ser_client directory
+4. Execute the following commands:
+    1. gcc utils.c tcp_server.c -o server
+       gcc -o client tcp_client.c utils.c
+    2. ./server
+5. Open four other terminals and in each one run:
+    1. ./client <external \index> <initial \temperature>
+    2. _example_- ./client 1 100, ./client 2 200 ...
+6. Incoming connections from each of the sockets will run/recalculate temperatures untill they stabalize, and
+   once stabalized, the program will end
 
-#### Compilation instructions
+   
+**Changes made to acomplish assignment:**
+Files modified: tcp_server.c and tcp_client.c
 
-```shell
-gcc utils.c tcp_server.c -o server
-gcc -o client tcp_client.c utils.c
-```
+tcp_client changes:
+- added a loop, that will continuously send and recieve temeratures  untill the process temps are stable, recalculating the external temp
+  based on the recieved central temp untill stable.
+- added new calculation of temperature logic.
 
-#### Here is a typical command line, run each in its own terminal
+tcp_server changes
+- added new calculation of temperature logic.
+- loop that recalculates central temperature untill stable.
+- added stabalization check; checks based on the temp threshhold, terminating once stable.
 
-Open a terminal and run: 
 
-```shell
-./server
-```
+**Output - 3 views** just to see the whole code. It did not all fit on screen:
 
-Open four terminals and in each one run: 
-
-```shell
-./client <external index> <initial temperature>
-```
-
-##### Example:      
-
-```shell
-./client 1 100
-```
-
-```shell
-./client 2 200
-```
-
-```shell
-./client 3 300
-```
-
-```shell
-./client 4 400
-```
-
-![sample_run](sample_run.jpg)
+![sample_run_all_process](p1.png)
+![sample_run_zoom_iin](p3.png)
+![sample_run.png](p2.png)
