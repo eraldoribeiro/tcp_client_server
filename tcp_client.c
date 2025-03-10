@@ -44,7 +44,9 @@ int main (int argc, char *argv[])
     }
     printf("Connected with server successfully\n");
     printf("--------------------------------------------------------\n\n");
-       
+    whiele(1) {
+        
+    
     // Package to the sent to server 
     the_message = prepare_message(externalIndex, initialTemperature); 
 
@@ -53,19 +55,27 @@ int main (int argc, char *argv[])
         printf("Unable to send message\n");
         return -1;
     }
- 
 
     // Receive the server's response:
     if(recv(socket_desc, (void *)&the_message, sizeof(the_message), 0) < 0){
         printf("Error while receiving server's msg\n");
         return -1;
     }
-    
+    // NEW
+    centralTemp = the_message.T;
+    printf("Received central temperature: %f\n", centralTemp);
+    // NEW
+    externalTemp = (3 * externalTemp + 2 * centralTemp) / 5;
+    printf("Updated external temperature: %f\n, externalTemp);
+    //NEW
+    if(the_message.Index == -1) {
+        printf("System Stabilized. Temperature: %f\n", externalTemp);
+        break;    
+    } 
     printf("--------------------------------------------------------\n");
-    printf("Updated temperature sent by the Central process = %f\n", the_message.T);
-    
+    printf("Updated temperature sent by the Central process = %f\n", the_message.T);    
+    }
     // Close the socket:
     close(socket_desc);
-    
     return 0;
 }
