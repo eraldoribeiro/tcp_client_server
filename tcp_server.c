@@ -104,55 +104,6 @@ int main(void)
     int * client_socket = establishConnectionsFromExternalProcesses(); 
 
 
-    // // Create socket:
-    // socket_desc = socket(AF_INET, SOCK_STREAM, 0);
-    
-    // if(socket_desc < 0){
-    //     printf("Error while creating socket\n");
-    //     return -1;
-    // }
-    // printf("Socket created successfully\n");
-    
-    // // Set port and IP:
-    // server_addr.sin_family = AF_INET;
-    // server_addr.sin_port = htons(2000);
-    // server_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
-    
-    // // Bind to the set port and IP:
-    // if(bind(socket_desc, (struct sockaddr*)&server_addr, sizeof(server_addr))<0){
-    //     printf("Couldn't bind to the port\n");
-    //     return -1;
-    // }
-    // printf("Done with binding\n");
-    
-    // // Listen for clients:
-    // if(listen(socket_desc, 1) < 0){
-    //     printf("Error while listening\n");
-    //     return -1;
-    // }
-    // printf("\nListening for incoming connections.....\n");
-
-
-    // //========================================================
-    // //  Connections from externals 
-    // //========================================================
-    // int externalCount = 0; 
-    // while (externalCount < 4){
-
-    //     // Accept an incoming connection:
-    //     client_socket[externalCount] = accept(socket_desc, (struct sockaddr*)&client_addr, &client_size);
-        
-    //     if (client_socket[externalCount] < 0){
-    //         printf("Can't accept\n");
-    //         return -1;
-    //     }
-
-    //     printf("One external process connected at IP: %s and port: %i\n", inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port));
-
-    //     externalCount++; 
-    // }
-
-    // printf("All four external processes are now connected\n\n");
 
     int stable = false;
     while ( !stable ){
